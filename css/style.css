@@ -1,26 +1,68 @@
-div{
-    width: 100px;
-    height: 100px;
-    background-color: green;
-    border-radius: 50%;
-    margin: 100px;
-    animation: example 4s linear 0s infinite alternate forwards;
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
 }
 
-
-/* 
------1----
-@
-keyframes example{
-    from{width: 100px; height: 100px}
-    to{width: 200px; height: 200px;}
-} */
-
-/* -----2----- */
-@keyframes example{
-   0%   {transform: scale(1.0);}
-  25%  {transform: scale(2.0);}
-  50%  {transform: scale(1.0);}
-  75%  {transform: scale(2.0);}
-  100% {transform: scale(1.0);}
+.boxes{
+    width: 80%;
+    height: 700px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+.box{
+    width: 50%;
+    height: 350px;
+    transition: .5s;
+}
+
+.box:hover{
+    position: relative;
+    transform: scale(.9);
+}
+
+.box:hover::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #023241;
+    opacity: 0.7; 
+}
+
+.box.stationary{
+    background-image: url(../image/portfolio-1.jpg);
+}
+
+.box.ice-cream{
+    background-image: url(../image/portfolio-2.jpg);
+}
+
+.box.strawberries{
+    background-image: url(../image/portfolio-3.jpg);
+}
+
+.box.workspace{
+    background-image: url(../image/portfolio-4.jpg);
+}
+
+.box .content{
+    width: 80%;
+    height: 20px;
+    margin: auto;
+    padding: 30px;
+}
+
+.box .content p{
+    color: white;
+    font-size: 20px;
+}
+
+.box .content h5{
+    font-size: 10px;
+    color: white;
+}
+
